@@ -2,34 +2,43 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
-  <title>Aurea – Colocation étudiante à Saint-Maurice</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" href="styles.css" />
-</head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aurea – Colocation étudiante Saint-Maurice</title>
 
+  <!-- Typos plus élégantes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
+  <meta name="description" content="Colocation étudiante Aurea Saint-Maurice : maison de charme rénovée, chambres cosy, quartier vivant et serein.">
+</head>
 <body>
-  <!-- HEADER -->
-  <header class="site-header">
-    <div class="container header-inner">
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="navbar-inner container">
       <div class="brand">
-        <img src="img/logo-aurea.png" alt="Logo Aurea Saint-Maurice" class="logo-img" />
+        <img src="images/logo-aurea.svg" alt="Aurea" class="brand-logo">
+        <span class="brand-name">Aurea</span>
+        <span class="brand-tagline">Saint-Maurice</span>
       </div>
-      <nav class="main-nav">
+      <nav class="nav-links">
         <a href="#accueil">Accueil</a>
         <a href="#concept">Concept</a>
         <a href="#residence">Résidence</a>
         <a href="#quartier">Quartier</a>
         <a href="#process">Process</a>
         <a href="#faq">FAQ</a>
-        <a href="#contact" class="nav-cta">Candidater</a>
+        <a href="#candidater" class="nav-cta">Candidater</a>
       </nav>
     </div>
   </header>
 
-  <main>
-    <!-- HERO -->
-    <section id="accueil" class="hero">
-      <div class="container hero-inner">
+  <!-- HERO -->
+  <main id="accueil">
+    <section class="hero">
+      <div class="container hero-grid">
         <div class="hero-text">
           <h1>Colocation Aurea Saint-Maurice</h1>
           <p class="hero-subtitle">
@@ -37,14 +46,42 @@
             Une colocation étudiante feutrée au cœur de Saint-Maurice.
           </p>
           <div class="hero-actions">
-            <a href="#residence" class="btn primary">Voir les chambres</a>
-            <a href="#contact" class="btn ghost">Rejoindre la liste d’attente</a>
+            <a href="#chambres" class="btn btn-primary">Voir les chambres</a>
+            <a href="#candidater" class="btn btn-ghost">Rejoindre la liste d’attente</a>
           </div>
         </div>
+        <div class="hero-media">
+          <!-- Salon principal -->
+          <div class="hero-photo-card">
+            <img src="images/salon-principal.jpg" alt="Salon Aurea Saint-Maurice">
+          </div>
+        </div>
+      </div>
+    </section>
 
-        <!-- HERO IMAGE -->
-        <div class="hero-image">
-          <img src="img/salon-aurea.jpg" alt="Salon Aurea" />
+    <!-- CONCEPT -->
+    <section id="concept" class="section">
+      <div class="container">
+        <h2>Le concept Aurea</h2>
+        <p class="section-intro">
+          Aurea s’inspire du coliving haut de gamme pour proposer une
+          colocation simple, élégante et chaleureuse, pensée pour les
+          étudiants et jeunes actifs qui recherchent un vrai lieu de vie.
+        </p>
+
+        <div class="cards-3">
+          <article class="card">
+            <h3>Chambres cosy</h3>
+            <p>Chambres lumineuses, rangements pratiques, déco douce. Un espace à soi, où l’on se sent vraiment chez soi.</p>
+          </article>
+          <article class="card">
+            <h3>Ambiance sereine</h3>
+            <p>Colocation calme, profils compatibles, règles claires. L’esprit maison plus que résidence anonyme.</p>
+          </article>
+          <article class="card">
+            <h3>Tout compris</h3>
+            <p>Loyer charges comprises, internet, maison équipée. Vous vous concentrez sur vos études, on s’occupe du reste.</p>
+          </article>
         </div>
       </div>
     </section>
@@ -54,123 +91,198 @@
       <div class="container">
         <h2>Résidence Aurea Saint-Maurice</h2>
         <p class="section-intro">
-          Une maison rénovée accueillant 10 chambres étudiantes, des espaces communs chaleureux et une vraie vie de maison.
+          Une maison rénovée accueillant 10 chambres étudiantes, des espaces
+          communs chaleureux et une vraie vie de maison.
         </p>
 
-        <!-- GALERIE AVEC TES VRAIS FICHIERS -->
-        <div class="gallery">
-          <img src="img/salon-aurea.jpg" alt="Salon Aurea" />
-          <img src="img/bar-murs-blancs.jpg" alt="Coin bar" />
-          <img src="img/cuisine-aurea.jpg" alt="Cuisine Aurea" />
-          <img src="img/chambre-claire.jpg" alt="Chambre claire" />
-          <img src="img/facade-maison.JPG" alt="Façade maison" />
+        <div class="residence-layout">
+          <div class="residence-gallery">
+            <!-- 3–4 photos clés, plus petites et harmonisées -->
+            <figure class="gallery-item">
+              <img src="images/salon-principal.jpg" alt="Salon et espace commun">
+            </figure>
+            <figure class="gallery-item">
+              <img src="images/bar-haut-tabourets.jpg" alt="Coin bar et espace repas">
+            </figure>
+            <figure class="gallery-item">
+              <img src="images/cuisine-carrelee.jpg" alt="Cuisine équipée Aurea">
+            </figure>
+            <figure class="gallery-item">
+              <img src="images/facade-maison.jpg" alt="Façade de la maison Aurea">
+            </figure>
+          </div>
+
+          <div class="residence-details">
+            <ul class="details-list">
+              <li>10 chambres meublées</li>
+              <li>Grande pièce de vie + cuisine équipée</li>
+              <li>2 salles de bain partagées + sanitaires</li>
+              <li>Wifi haut débit, électroménager complet</li>
+              <li>Maison de caractère, poutres apparentes, pierres</li>
+            </ul>
+            <p class="small-note">
+              Visites possibles sur demande après étude rapide de votre candidature.
+            </p>
+          </div>
         </div>
+      </div>
+    </section>
 
-        <h3 class="subheading">Les chambres</h3>
+    <!-- CHAMBRES -->
+    <section id="chambres" class="section">
+      <div class="container">
+        <h2>Les chambres</h2>
+        <p class="section-intro">
+          Chaque chambre a son style, sa lumière, sa vue. Voici un aperçu des
+          chambres d’Aurea Saint-Maurice.
+        </p>
 
-        <div class="grid grid-3">
-          <article class="card room-card">
-            <h4>Chambre 1 – Vue cour</h4>
-            <p class="room-meta">10 m² · 490 €/mois CC</p>
-            <p class="badge badge-available">Disponible</p>
-            <p>Chambre calme donnant sur la cour pavée.</p>
-            <a href="#contact" class="btn small">Candidater</a>
+        <div class="room-grid">
+          <!-- Exemple – tu peux dupliquer pour tes 10 chambres -->
+          <article class="room-card">
+            <div class="room-photo">
+              <img src="images/chambre-vue-jardin.jpg" alt="Chambre vue jardin">
+            </div>
+            <div class="room-text">
+              <h3>Chambre 1 – Vue jardin</h3>
+              <p class="room-meta">10 m² · 490 €/mois CC</p>
+              <p class="room-status room-status-available">Disponible</p>
+              <p>Chambre calme donnant sur la cour pavée.</p>
+              <a href="#candidater" class="room-cta">Candidater pour cette chambre</a>
+            </div>
           </article>
 
-          <article class="card room-card">
-            <h4>Chambre 2 – Vue jardin</h4>
-            <p class="room-meta">12 m² · 520 €/mois CC</p>
-            <p class="badge badge-waiting">Bientôt disponible</p>
-            <p>Grande chambre lumineuse avec rangements.</p>
-            <a href="#contact" class="btn small">Être prévenu</a>
+          <article class="room-card">
+            <div class="room-photo">
+              <img src="images/chambre-clair-bureau.jpg" alt="Chambre lumineuse avec bureau">
+            </div>
+            <div class="room-text">
+              <h3>Chambre 2 – Vue jardin</h3>
+              <p class="room-meta">12 m² · 520 €/mois CC</p>
+              <p class="room-status room-status-soon">Bientôt disponible</p>
+              <p>Grande chambre lumineuse avec rangements.</p>
+              <a href="#candidater" class="room-cta">Être prévenu dès qu’elle se libère</a>
+            </div>
           </article>
 
-          <article class="card room-card">
-            <h4>Chambre 3 – Studio avec salle d’eau</h4>
-            <p class="room-meta">14 m² · 560 €/mois CC</p>
-            <p class="badge badge-full">Actuellement louée</p>
-            <p>Espace indépendant avec salle d’eau privative.</p>
-            <a href="#contact" class="btn small ghost">Liste d’attente</a>
+          <article class="room-card">
+            <div class="room-photo">
+              <img src="images/chambre-sous-combles.jpg" alt="Chambre sous combles">
+            </div>
+            <div class="room-text">
+              <h3>Chambre 3 – Sous combles</h3>
+              <p class="room-meta">11 m² · 510 €/mois CC</p>
+              <p class="room-status room-status-full">Actuellement louée</p>
+              <p>Chambre chaleureuse, plafond mansardé, coin bureau cocoon.</p>
+              <a href="#candidater" class="room-cta room-cta-ghost">Rejoindre la liste d’attente</a>
+            </div>
           </article>
         </div>
       </div>
     </section>
 
     <!-- QUARTIER -->
-    <section id="quartier" class="section">
+    <section id="quartier" class="section section-alt">
       <div class="container">
         <h2>Quartier Saint-Maurice</h2>
         <p class="section-intro">
-          Un quartier vivant, charmant et authentique, avec commerces, transports et ruelles pavées.
+          Un quartier vivant, charmant et authentique, avec commerces,
+          transports et ruelles pavées.
         </p>
 
-        <div class="grid grid-2">
+        <div class="quartier-layout">
           <div>
             <h3>Tout à proximité</h3>
-            <ul class="icon-list">
+            <ul class="details-list">
               <li>Transports en commun</li>
               <li>Commerces, cafés, restaurants</li>
               <li>Parcs et bords de rivière</li>
             </ul>
           </div>
-
-          <!-- IMAGE QUARTIER AVEC TON VRAI NOM -->
-          <div>
-            <img src="img/quartier-rue.jpg" alt="Rue du quartier Saint-Maurice" class="rounded" />
-          </div>
+          <figure class="quartier-photo">
+            <img src="images/ruelle-quartier.jpg" alt="Ruelle pavée du quartier Saint-Maurice">
+          </figure>
         </div>
       </div>
     </section>
 
-    <!-- CONTACT -->
-    <section id="contact" class="section section-contact">
+    <!-- PROCESS -->
+    <section id="process" class="section">
+      <div class="container">
+        <h2>Comment ça se passe ?</h2>
+        <ol class="process-list">
+          <li>Vous remplissez le formulaire de candidature en bas de page.</li>
+          <li>Nous revenons vers vous pour un premier échange rapide.</li>
+          <li>Visite sur place ou en visio si votre profil correspond.</li>
+          <li>Validation du dossier et signature du bail.</li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="section section-alt">
+      <div class="container">
+        <h2>FAQ</h2>
+        <div class="faq-list">
+          <details>
+            <summary>La colocation est-elle plutôt calme ?</summary>
+            <p>Oui. Aurea vise une ambiance sereine et respectueuse, avec des colocataires compatibles.</p>
+          </details>
+          <details>
+            <summary>Les charges sont-elles incluses ?</summary>
+            <p>Le loyer est charges comprises (CC) : eau, électricité, chauffage, internet.</p>
+          </details>
+          <details>
+            <summary>Puis-je visiter avant de candidater ?</summary>
+            <p>Nous privilégions d’abord une candidature rapide pour vérifier l’adéquation du profil, puis nous proposons une visite.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT & CANDIDATURE -->
+    <section id="candidater" class="section">
       <div class="container">
         <h2>Contact & Candidatures</h2>
         <p class="section-intro">
           Dites-nous qui vous êtes, et nous reviendrons vers vous rapidement.
         </p>
 
-        <form class="contact-form" method="post" action="#">
-          <div class="form-row">
-            <div class="form-group">
-              <label for="nom">Nom</label>
-              <input type="text" id="nom" name="nom" required />
-            </div>
-            <div class="form-group">
-              <label for="prenom">Prénom</label>
-              <input type="text" id="prenom" name="prenom" required />
-            </div>
+        <form class="form">
+          <div class="form-grid">
+            <label>
+              Nom
+              <input type="text" name="nom" required>
+            </label>
+            <label>
+              Prénom
+              <input type="text" name="prenom" required>
+            </label>
+            <label>
+              Email
+              <input type="email" name="email" required>
+            </label>
+            <label>
+              Téléphone
+              <input type="tel" name="telephone">
+            </label>
           </div>
 
-          <div class="form-row">
-            <div class="form-group">
-              <label for="email">Email</label>
-              <input type="email" id="email" name="email" required />
-            </div>
-            <div class="form-group">
-              <label for="telephone">Téléphone</label>
-              <input type="tel" id="telephone" name="telephone" />
-            </div>
-          </div>
+          <label class="full-width">
+            Message
+            <textarea name="message" rows="4" placeholder="Parlez-nous un peu de vous, de vos études et de ce que vous cherchez."></textarea>
+          </label>
 
-          <div class="form-group">
-            <label for="message">Message</label>
-            <textarea id="message" name="message" rows="5"></textarea>
-          </div>
-
-          <button type="submit" class="btn primary">Envoyer</button>
+          <button type="submit" class="btn btn-primary">Envoyer</button>
         </form>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer">
+  <footer class="footer">
     <div class="container footer-inner">
-      <p>© <span id="year"></span> Aurea – Colocation étudiante à Saint-Maurice</p>
+      <p>© 2025 Aurea – Colocation étudiante à Saint-Maurice</p>
     </div>
-    <script>
-      document.getElementById("year").textContent = new Date().getFullYear();
-    </script>
   </footer>
 </body>
 </html>
