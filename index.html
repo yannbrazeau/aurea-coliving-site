@@ -112,34 +112,23 @@
         </p>
       </div>
 
-      <div class="residence-layout">
-        <div class="residence-gallery-small">
-          <figure class="residence-thumb">
-            <img src="img/salon-aurea.jpg" alt="Grand salon Aurea avec canapés, poutres apparentes et coin repas">
-          </figure>
-          <figure class="residence-thumb">
-            <img src="img/chambre-vue-cour.jpg" alt="Chambre lumineuse avec bureau donnant sur la cour">
-          </figure>
-          <figure class="residence-thumb">
-            <img src="img/chambre-sous-combles.jpg" alt="Chambre sous combles avec bureau et rangements">
-          </figure>
-          <figure class="residence-thumb">
-            <img src="img/salle-eau-2.jpg" alt="Salle d’eau avec double vasque et douche">
-          </figure>
-        </div>
-
-        <div class="residence-highlights">
-          <ul>
-            <li>Maison de ville en cœur historique, murs en pierre et poutres apparentes.</li>
-            <li>Grand salon avec canapés, coin repas et bar haut.</li>
-            <li>Chambres meublées, chacune avec son ambiance et ses rangements.</li>
-            <li>Salles d’eau partagées fonctionnelles et entretenues.</li>
-            <li>Wifi haut débit, électroménager complet, maison entièrement équipée.</li>
-          </ul>
-          <p class="residence-note">
-            Les visites sont possibles sur demande après étude rapide de votre candidature.
-          </p>
-        </div>
+      <div class="residence-grid">
+        <figure class="residence-photo large">
+          <img src="img/salon-aurea.jpg" alt="Grand salon Aurea avec canapés et poutres apparentes">
+          <figcaption>Grand salon avec canapés, coin repas et murs en pierre.</figcaption>
+        </figure>
+        <figure class="residence-photo">
+          <img src="img/bar-murs-blancs.jpg" alt="Coin bar convivial pour les petits-déjeuners et repas informels">
+          <figcaption>Coin bar pour les petits-déjeuners et les temps partagés.</figcaption>
+        </figure>
+        <figure class="residence-photo">
+          <img src="img/cuisine-aurea.JPG" alt="Cuisine équipée pour cuisiner à plusieurs">
+          <figcaption>Cuisine entièrement équipée, pensée pour cuisiner à plusieurs.</figcaption>
+        </figure>
+        <figure class="residence-photo facade">
+          <img src="img/facade-maison.JPG" alt="Façade de la maison Aurea à Angers">
+          <figcaption>Maison de ville en cœur historique, dans une rue calme pavée.</figcaption>
+        </figure>
       </div>
     </div>
   </section>
@@ -150,56 +139,94 @@
       <div class="section-header">
         <h2>Les chambres</h2>
         <p class="section-intro">
-          Chaque chambre a sa lumière, sa vue, son ambiance. Voici un aperçu
-          des chambres d’Aurea Saint-Maurice. Loyer charges comprises
-          (eau, électricité, chauffage, internet, entretien des communs).
+          Chaque chambre a sa lumière, sa vue, son ambiance. Les espaces ont été aménagés
+          pour des séjours longs et sereins, dans une maison ancienne au cœur du centre
+          historique. Loyer charges comprises (eau, électricité, chauffage, internet,
+          entretien des communs).
         </p>
       </div>
 
-      <div class="rooms-stack">
-        <article class="room-line">
-          <div class="room-line-photo">
-            <img src="img/chambre-vue-cour.jpg" alt="Chambre 1 avec bureau, vue sur la cour">
+      <div class="rooms-grid-elegant">
+        <!-- Chambre 1 : libre -->
+        <article class="room-card-elegant room-free">
+          <div class="room-image-wrapper">
+            <img src="img/chambre-vue-cour.jpg" alt="Chambre 1 avec bureau, vue cour pavée">
+            <span class="room-badge room-badge-free">Disponible</span>
           </div>
-          <div class="room-line-body">
+          <div class="room-content">
             <h3>Chambre 1 – Vue cour</h3>
             <p class="room-meta">10 m² · 490 €/mois CC</p>
-            <p class="room-status room-status-free">DISPONIBLE</p>
-            <p>Chambre calme avec bureau, donnant sur la cour pavée.</p>
-            <a href="#contact" class="room-link">Candidater pour cette chambre</a>
+            <p class="room-text">
+              Chambre calme donnant sur la cour pavée, avec bureau et rangements intégrés.
+              Parquet ancien et lumière douce, idéale pour travailler au calme.
+            </p>
+            <ul class="room-details">
+              <li>Bureau et rangements intégrés</li>
+              <li>Lit simple, matelas confortable</li>
+              <li>Proximité immédiate des pièces d’eau</li>
+            </ul>
+            <div class="room-actions">
+              <a href="#contact" class="btn-room-primary">Réserver cette chambre</a>
+              <a href="#contact" class="btn-room-secondary">Demander plus de photos</a>
+            </div>
           </div>
         </article>
 
-        <article class="room-line">
-          <div class="room-line-photo">
-            <img src="img/chambre-vue-jardin.jpg" alt="Chambre 2 mansardée, lumineuse">
+        <!-- Chambre 2 : bientôt libre / liste d’attente -->
+        <article class="room-card-elegant room-waiting">
+          <div class="room-image-wrapper">
+            <img src="img/chambre-vue-jardin.jpg" alt="Chambre 2 mansardée, vue jardin">
+            <span class="room-badge room-badge-waiting">Bientôt disponible</span>
           </div>
-          <div class="room-line-body">
+          <div class="room-content">
             <h3>Chambre 2 – Vue jardin</h3>
             <p class="room-meta">12 m² · 520 €/mois CC</p>
-            <p class="room-status room-status-soon">BIENTÔT DISPONIBLE</p>
-            <p>Chambre mansardée, lumineuse, idéale pour travailler au calme.</p>
-            <a href="#contact" class="room-link">Être prévenu dès qu’elle se libère</a>
+            <p class="room-text">
+              Chambre mansardée, très lumineuse, avec vue dégagée sur les toits et jardins
+              voisins. Mobilier récent, ambiance claire et épurée.
+            </p>
+            <ul class="room-details">
+              <li>Grande surface utile sous combles</li>
+              <li>Fenêtre de toit et éclairage chaleureux</li>
+              <li>Accès rapide au salon et à la cuisine</li>
+            </ul>
+            <div class="room-actions">
+              <a href="#contact" class="btn-room-primary">Se mettre sur liste d’attente</a>
+              <a href="#contact" class="btn-room-secondary">Recevoir plus de photos</a>
+            </div>
           </div>
         </article>
 
-        <article class="room-line">
-          <div class="room-line-photo">
+        <!-- Chambre 3 : louée / liste d’attente -->
+        <article class="room-card-elegant room-full">
+          <div class="room-image-wrapper">
             <img src="img/chambre-sous-combles.jpg" alt="Chambre 3 sous les toits, ambiance cocooning">
+            <span class="room-badge room-badge-full">Actuellement louée</span>
           </div>
-          <div class="room-line-body">
+          <div class="room-content">
             <h3>Chambre 3 – Sous les toits</h3>
             <p class="room-meta">11 m² · 505 €/mois CC</p>
-            <p class="room-status room-status-full">ACTUELLEMENT LOUÉE</p>
-            <p>Chambre sous les toits, esprit cocooning, avec coin bureau.</p>
-            <a href="#contact" class="room-link">Rejoindre la liste d’attente</a>
+            <p class="room-text">
+              Chambre sous les toits avec coin bureau, grands rangements et lumière traversante.
+              Un exemple de chambre déjà occupée dans la maison.
+            </p>
+            <ul class="room-details">
+              <li>Ambiance très cocooning</li>
+              <li>Nombreux rangements intégrés</li>
+              <li>Accès facile aux parties communes</li>
+            </ul>
+            <div class="room-actions">
+              <a href="#contact" class="btn-room-primary">Être prévenu d’une prochaine place</a>
+              <a href="#contact" class="btn-room-secondary">Demander un dossier complet</a>
+            </div>
           </div>
         </article>
       </div>
 
       <p class="section-note">
-        Certaines chambres sont déjà louées. Vous pouvez
-        <a href="#contact">rejoindre la liste d’attente</a> pour être contacté dès qu’une place se libère.
+        D’autres chambres existent également dans la maison. Vous pouvez
+        <a href="#contact">nous contacter</a> pour recevoir un descriptif détaillé
+        et des photos complémentaires.
       </p>
     </div>
   </section>
@@ -240,7 +267,7 @@
           </p>
           <p class="quartier-text-small">
             La rue des Filles-Dieu tire son nom d’un ancien ordre religieux du
-            Moyen Âge. On y retrouve une vraie atmosphère de quartier :
+            Moyen Âge. On y retrouve une atmosphère de quartier
             <strong>authentique, calme et pleine de charme</strong>.
           </p>
         </div>
