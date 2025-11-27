@@ -1,779 +1,432 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Aurea – Colocation étudiante Saint-Maurice</title>
-
-  <!-- Typos élégantes -->
+  <meta charset="UTF-8">
+  <title>Aurea – Colocation étudiante à Angers, quartier Saint-Maurice</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Aurea Saint-Maurice : maison de charme rénovée en colocation étudiante à Angers. Chambres cosy, espaces communs chaleureux, quartier historique et sécurisé.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
-
-  <!-- CSS INTÉGRÉ -->
-  <style>
-    :root {
-      --bg-main: #f6eee2;
-      --bg-alt: #f0e6d6;
-      --text-main: #2a2724;
-      --text-muted: #7b7266;
-      --accent: #396c4b;
-      --accent-soft: #f2d59a;
-      --border-soft: #e1d7c7;
-      --radius-lg: 18px;
-      --radius-md: 12px;
-      --shadow-soft: 0 12px 30px rgba(0, 0, 0, 0.04);
-    }
-
-    *, *::before, *::after { box-sizing: border-box; }
-
-    body {
-      margin: 0;
-      font-family: "DM Sans", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-      background: var(--bg-main);
-      color: var(--text-main);
-      line-height: 1.6;
-    }
-
-    h1, h2, h3 {
-      font-family: "Playfair Display", "DM Sans", serif;
-      font-weight: 500;
-      margin: 0 0 0.5rem;
-      letter-spacing: 0.02em;
-    }
-    h1 { font-size: 2.2rem; }
-    h2 { font-size: 1.7rem; }
-    h3 { font-size: 1.2rem; }
-
-    p { margin: 0; }
-
-    .container {
-      width: 100%;
-      max-width: 1040px;
-      margin: 0 auto;
-      padding: 0 16px;
-    }
-
-    .section { padding: 72px 0; }
-    .section-alt { background: var(--bg-alt); }
-
-    .section-intro {
-      max-width: 640px;
-      color: var(--text-muted);
-      margin: 0.75rem 0 2rem;
-    }
-
-    /* NAVBAR */
-    .navbar {
-      position: sticky;
-      top: 0;
-      z-index: 50;
-      background: var(--bg-main);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid rgba(0,0,0,0.03);
-    }
-    .navbar-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 10px 16px;
-    }
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-    .brand-logo {
-      height: 56px;         /* logo bien visible */
-      width: auto;
-      object-fit: contain;
-      display: block;
-      border-radius: 10px;
-    }
-    .brand-text-group {
-      display: flex;
-      flex-direction: column;
-      gap: 2px;
-    }
-    .brand-name {
-      font-weight: 600;
-      letter-spacing: 0.10em;
-      text-transform: uppercase;
-      font-size: 0.8rem;
-    }
-    .brand-tagline {
-      font-size: 0.8rem;
-      color: var(--text-muted);
-    }
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      font-size: 0.9rem;
-      white-space: nowrap;
-      overflow-x: auto;
-    }
-    .nav-links a {
-      text-decoration: none;
-      color: var(--text-main);
-      padding: 6px 8px;
-      border-radius: 999px;
-    }
-    .nav-links a:hover {
-      background: rgba(0,0,0,0.02);
-    }
-    .nav-cta {
-      border: 1px solid var(--accent);
-      color: var(--accent);
-    }
-
-    /* BOUTONS */
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 10px 20px;
-      border-radius: 999px;
-      font-size: 0.95rem;
-      text-decoration: none;
-      border: none;
-      cursor: pointer;
-    }
-    .btn-primary {
-      background: linear-gradient(135deg, var(--accent), #af7c2c);
-      color: #fff;
-    }
-    .btn-ghost {
-      background: transparent;
-      border: 1px solid var(--accent);
-      color: var(--accent);
-    }
-
-    /* HERO */
-    .hero { padding: 80px 0 56px; }
-    .hero-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 1.5fr) minmax(0, 1.2fr);
-      gap: 32px;
-      align-items: center;
-    }
-    .hero-subtitle {
-      color: var(--text-muted);
-      margin: 0.75rem 0 1.5rem;
-    }
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-    .hero-media { display: flex; justify-content: flex-end; }
-    .hero-photo-card {
-      max-width: 280px;
-      border-radius: 32px;
-      overflow: hidden;
-      box-shadow: var(--shadow-soft);
-    }
-    .hero-photo-card img {
-      display: block;
-      width: 100%;
-      height: auto;
-    }
-
-    /* CARTES CONCEPT */
-    .cards-3 {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 18px;
-    }
-    .card {
-      background: #fff;
-      border-radius: var(--radius-md);
-      padding: 20px 18px;
-      box-shadow: var(--shadow-soft);
-      border: 1px solid var(--border-soft);
-    }
-    .card p {
-      margin: 0.5rem 0 0;
-      color: var(--text-muted);
-    }
-
-    /* RÉSIDENCE */
-    .residence-layout {
-      display: grid;
-      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
-      gap: 32px;
-      align-items: flex-start;
-    }
-    .residence-gallery {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 14px;
-    }
-    .gallery-item {
-      border-radius: var(--radius-lg);
-      overflow: hidden;
-      box-shadow: var(--shadow-soft);
-      background: #fff;
-    }
-    .gallery-item img {
-      display: block;
-      width: 100%;
-      height: 170px;
-      object-fit: cover;
-    }
-    .details-list {
-      list-style: none;
-      padding: 0;
-      margin: 0 0 1rem;
-    }
-    .details-list li::before {
-      content: "• ";
-      color: var(--accent);
-    }
-    .details-list li {
-      margin-bottom: 0.35rem;
-      color: var(--text-main);
-    }
-    .small-note {
-      font-size: 0.85rem;
-      color: var(--text-muted);
-    }
-
-    /* CHAMBRES */
-    .room-grid { display: grid; gap: 20px; }
-    .room-card {
-      display: grid;
-      grid-template-columns: 190px minmax(0, 1fr);
-      gap: 18px;
-      align-items: stretch;
-      background: #fff;
-      border-radius: var(--radius-lg);
-      box-shadow: var(--shadow-soft);
-      border: 1px solid var(--border-soft);
-      padding: 12px;
-    }
-    .room-photo img {
-      display: block;
-      width: 100%;
-      height: 160px;
-      object-fit: cover;
-      border-radius: calc(var(--radius-lg) - 4px);
-    }
-    .room-meta {
-      color: var(--text-muted);
-      margin: 0.15rem 0;
-    }
-    .room-status {
-      font-size: 0.85rem;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      margin-bottom: 0.4rem;
-    }
-    .room-status-available { color: #2c7a4b; }
-    .room-status-soon { color: #b7791f; }
-    .room-status-full { color: #718096; }
-    .room-cta {
-      display: inline-flex;
-      margin-top: 0.6rem;
-      font-size: 0.9rem;
-      color: var(--accent);
-      border-bottom: 1px solid rgba(57,108,75,0.25);
-      text-decoration: none;
-    }
-    .room-cta-ghost {
-      color: var(--text-muted);
-    }
-
-    /* QUARTIER */
-    .quartier-layout {
-      display: grid;
-      grid-template-columns: minmax(0, 1.3fr) minmax(0, 1.1fr);
-      gap: 28px;
-      align-items: flex-start;
-    }
-    .quartier-photo {
-      border-radius: var(--radius-lg);
-      overflow: hidden;
-      box-shadow: var(--shadow-soft);
-    }
-    .quartier-photo img {
-      width: 100%;
-      height: 220px;
-      object-fit: cover;
-    }
-
-    .quartier-media {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-    }
-    .quartier-map {
-      border-radius: var(--radius-lg);
-      overflow: hidden;
-      box-shadow: var(--shadow-soft);
-      border: 1px solid var(--border-soft);
-      background: #fff;
-    }
-    .quartier-map iframe {
-      width: 100%;
-      height: 260px;
-      border: 0;
-      display: block;
-    }
-
-    /* PROCESS */
-    .process-list {
-      padding-left: 1.2rem;
-      max-width: 600px;
-    }
-
-    /* FAQ */
-    .faq-list {
-      max-width: 680px;
-    }
-    details {
-      background: #fff;
-      border-radius: var(--radius-md);
-      padding: 10px 14px;
-      margin-bottom: 8px;
-      border: 1px solid var(--border-soft);
-    }
-    summary {
-      list-style: none;
-      cursor: pointer;
-      font-weight: 500;
-    }
-    summary::-webkit-details-marker {
-      display: none;
-    }
-
-    /* FORMULAIRE */
-    .form {
-      max-width: 680px;
-      margin-top: 1rem;
-    }
-    .form-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 14px;
-      margin-bottom: 1rem;
-    }
-    label {
-      font-size: 0.9rem;
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
-    }
-    input,
-    textarea {
-      border-radius: 999px;
-      border: 1px solid var(--border-soft);
-      padding: 9px 14px;
-      font-family: inherit;
-      font-size: 0.95rem;
-      background: #fff;
-    }
-    textarea {
-      border-radius: 16px;
-      min-height: 110px;
-      resize: vertical;
-    }
-    .full-width {
-      margin-bottom: 1rem;
-    }
-
-    /* FOOTER */
-    .footer {
-      border-top: 1px solid rgba(0, 0, 0, 0.05);
-      padding: 20px 0 26px;
-      font-size: 0.85rem;
-      color: var(--text-muted);
-    }
-    .footer-inner {
-      text-align: center;
-    }
-
-    /* RESPONSIVE */
-    @media (max-width: 900px) {
-      .hero-grid { grid-template-columns: 1fr; }
-      .hero-media { justify-content: flex-start; }
-
-      .cards-3 { grid-template-columns: 1fr; }
-
-      .residence-layout { grid-template-columns: 1fr; }
-
-      .room-card { grid-template-columns: 1fr; }
-
-      .quartier-layout { grid-template-columns: 1fr; }
-
-      .form-grid { grid-template-columns: 1fr; }
-    }
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
-  <!-- NAVBAR -->
-  <header class="navbar">
-    <div class="navbar-inner container">
-      <div class="brand">
-        <img src="img/logo-aurea.png" alt="Logo Aurea" class="brand-logo">
-        <div class="brand-text-group">
-          <span class="brand-name">Aurea</span>
-          <span class="brand-tagline">Colocation Saint-Maurice · Angers</span>
-        </div>
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="#accueil" class="brand">
+      <img src="img/logo-aurea.png" alt="Logo Aurea" class="brand-logo">
+      <div class="brand-text">
+        <span class="brand-name">Aurea</span>
+        <span class="brand-tagline">Saint-Maurice · Angers</span>
       </div>
-      <nav class="nav-links">
-        <a href="#accueil">Accueil</a>
-        <a href="#concept">Concept</a>
-        <a href="#residence">Résidence</a>
-        <a href="#quartier">Quartier</a>
-        <a href="#process">Process</a>
-        <a href="#faq">FAQ</a>
-        <a href="#candidater" class="nav-cta">Candidater</a>
-      </nav>
-    </div>
-  </header>
+    </a>
 
-  <main id="accueil">
-    <!-- HERO -->
-    <section class="hero">
-      <div class="container hero-grid">
-        <div class="hero-text">
-          <h1>Colocation Aurea Saint-Maurice</h1>
-          <p class="hero-subtitle">
-            Maison de charme rénovée, chambres cosy et ambiance sereine.
-            Une colocation étudiante feutrée au cœur du centre historique d’Angers.
-          </p>
-          <div class="hero-actions">
-            <a href="#chambres" class="btn btn-primary">Voir les chambres</a>
-            <a href="#candidater" class="btn btn-ghost">Rejoindre la liste d’attente</a>
-          </div>
-        </div>
-        <div class="hero-media">
-          <div class="hero-photo-card">
-            <img src="img/salon-aurea.jpg" alt="Salon Aurea Saint-Maurice">
-          </div>
-        </div>
-      </div>
-    </section>
+    <nav class="main-nav">
+      <a href="#accueil">Accueil</a>
+      <a href="#concept">Concept</a>
+      <a href="#residence">Résidence</a>
+      <a href="#chambres">Chambres</a>
+      <a href="#quartier">Quartier</a>
+      <a href="#process">Process</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact" class="nav-cta">Candidater</a>
+    </nav>
+  </div>
+</header>
 
-    <!-- CONCEPT -->
-    <section id="concept" class="section">
-      <div class="container">
-        <h2>Le concept Aurea</h2>
-        <p class="section-intro">
-          Aurea s’inspire des codes du coliving haut de gamme pour proposer une
-          colocation simple, élégante et chaleureuse, pensée pour les étudiants
-          et jeunes actifs qui recherchent un vrai lieu de vie.
+<main>
+  <!-- HERO / ACCUEIL -->
+  <section id="accueil" class="section hero">
+    <div class="container hero-grid">
+      <div class="hero-text">
+        <p class="hero-eyebrow">Colocation étudiante à Angers</p>
+        <h1>Colocation Aurea<br>Saint-Maurice</h1>
+        <p class="hero-lead">
+          Maison de charme rénovée, chambres cosy et ambiance sereine.
+          Une colocation étudiante feutrée au cœur du quartier Saint-Maurice.
         </p>
 
-        <div class="cards-3">
-          <article class="card">
-            <h3>Chambres cosy</h3>
-            <p>Chambres lumineuses, rangements pratiques, déco douce. Un espace à soi, où l’on se sent vraiment chez soi.</p>
-          </article>
-          <article class="card">
-            <h3>Ambiance sereine</h3>
-            <p>Colocation calme, profils compatibles, règles claires. L’esprit maison plutôt que résidence anonyme.</p>
-          </article>
-          <article class="card">
-            <h3>Tout compris</h3>
-            <p>Loyer charges comprises, internet, maison équipée. Vous vous concentrez sur vos études, on s’occupe du reste.</p>
-          </article>
+        <div class="hero-actions">
+          <a href="#chambres" class="btn btn-primary">Voir les chambres</a>
+          <a href="#contact" class="btn btn-ghost">Rejoindre la liste d’attente</a>
         </div>
-      </div>
-    </section>
 
-    <!-- RÉSIDENCE -->
-    <section id="residence" class="section section-alt">
-      <div class="container">
+        <p class="hero-small">
+          10 chambres meublées · Internet fibre · Espaces communs chaleureux · Quartier historique et sécurisé.
+        </p>
+      </div>
+
+      <div class="hero-media">
+        <figure class="hero-photo">
+          <img src="img/salon-aurea.jpg" alt="Salon Aurea Saint-Maurice">
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONCEPT -->
+  <section id="concept" class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Le concept Aurea</h2>
+        <p class="section-intro">
+          Aurea s’inspire du coliving haut de gamme pour proposer une colocation
+          simple, élégante et chaleureuse, pensée pour les étudiants et jeunes
+          actifs qui recherchent un vrai lieu de vie.
+        </p>
+      </div>
+
+      <div class="feature-grid">
+        <article class="feature-card">
+          <h3>Chambres cosy</h3>
+          <p>
+            Chambres lumineuses, rangements pratiques, literie confortable et
+            déco douce. Chaque résident dispose de son espace à soi.
+          </p>
+        </article>
+        <article class="feature-card">
+          <h3>Ambiance sereine</h3>
+          <p>
+            Colocation calme, profils compatibles, règles claires. L’esprit
+            maison plutôt que résidence anonyme.
+          </p>
+        </article>
+        <article class="feature-card">
+          <h3>Tout compris</h3>
+          <p>
+            Loyer charges comprises, internet, maison équipée. Vous vous
+            concentrez sur vos études, on s’occupe du reste.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- RÉSIDENCE -->
+  <section id="residence" class="section section-alt">
+    <div class="container">
+      <div class="section-header">
         <h2>Résidence Aurea Saint-Maurice</h2>
         <p class="section-intro">
           Une maison rénovée accueillant 10 chambres étudiantes, des espaces
           communs chaleureux et une vraie vie de maison.
         </p>
-
-        <div class="residence-layout">
-          <div class="residence-gallery">
-            <figure class="gallery-item">
-              <img src="img/salon-aurea.jpg" alt="Salon et espace commun">
-            </figure>
-            <figure class="gallery-item">
-              <img src="img/bar-murs-blancs.jpg" alt="Coin bar Aurea">
-            </figure>
-            <figure class="gallery-item">
-              <img src="img/cuisine-aurea.jpg" alt="Cuisine Aurea">
-            </figure>
-            <figure class="gallery-item">
-              <img src="img/facade-maison.JPG" alt="Façade de la maison Aurea">
-            </figure>
-          </div>
-
-          <div class="residence-details">
-            <ul class="details-list">
-              <li>10 chambres meublées</li>
-              <li>Grande pièce de vie + cuisine entièrement équipée</li>
-              <li>2 salles de bain partagées + sanitaires</li>
-              <li>Wifi haut débit, électroménager complet</li>
-              <li>Maison de caractère, poutres apparentes, murs en pierre</li>
-            </ul>
-            <p class="small-note">
-              Visites possibles sur demande après étude rapide de votre candidature.
-            </p>
-          </div>
-        </div>
       </div>
-    </section>
 
-    <!-- CHAMBRES -->
-    <section id="chambres" class="section">
-      <div class="container">
+      <div class="residence-grid">
+        <figure class="residence-photo large">
+          <img src="img/salon-aurea.jpg" alt="Salon et espace commun Aurea">
+          <figcaption>Grand salon avec canapés, coin repas et pierres apparentes.</figcaption>
+        </figure>
+        <figure class="residence-photo">
+          <img src="img/bar-murs-blancs.jpg" alt="Coin bar et espace repas">
+          <figcaption>Coin bar convivial pour les petits-déjeuners et apéros.</figcaption>
+        </figure>
+        <figure class="residence-photo">
+          <img src="img/cuisine-aurea.jpg" alt="Cuisine équipée">
+          <figcaption>Cuisine équipée pour cuisiner à plusieurs.</figcaption>
+        </figure>
+        <figure class="residence-photo">
+          <img src="img/chambre-claire.jpg" alt="Exemple de chambre Aurea">
+          <figcaption>Exemple de chambre meublée, lumineuse et fonctionnelle.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHAMBRES -->
+  <section id="chambres" class="section">
+    <div class="container">
+      <div class="section-header">
         <h2>Les chambres</h2>
         <p class="section-intro">
-          Chaque chambre a sa lumière, sa vue, son ambiance. Voici un aperçu
-          des chambres d’Aurea Saint-Maurice.
+          10 chambres meublées, chacune avec son charme. Loyer charges comprises
+          (eau, électricité, chauffage, internet, entretien des communs).
         </p>
-
-        <div class="room-grid">
-          <article class="room-card">
-            <div class="room-photo">
-              <img src="img/chambre-claire.jpg" alt="Chambre claire avec bureau">
-            </div>
-            <div class="room-text">
-              <h3>Chambre 1 – Vue cour</h3>
-              <p class="room-meta">10 m² · 490 €/mois CC</p>
-              <p class="room-status room-status-available">Disponible</p>
-              <p>Chambre calme donnant sur la cour pavée.</p>
-              <a href="#candidater" class="room-cta">Candidater pour cette chambre</a>
-            </div>
-          </article>
-
-          <article class="room-card">
-            <div class="room-photo">
-              <img src="img/chambre-claire.jpg" alt="Chambre lumineuse Aurea">
-            </div>
-            <div class="room-text">
-              <h3>Chambre 2 – Vue jardin</h3>
-              <p class="room-meta">12 m² · 520 €/mois CC</p>
-              <p class="room-status room-status-soon">Bientôt disponible</p>
-              <p>Grande chambre lumineuse avec rangements.</p>
-              <a href="#candidater" class="room-cta">Être prévenu dès qu’elle se libère</a>
-            </div>
-          </article>
-
-          <article class="room-card">
-            <div class="room-photo">
-              <img src="img/chambre-claire.jpg" alt="Chambre sous combles">
-            </div>
-            <div class="room-text">
-              <h3>Chambre 3 – Sous combles</h3>
-              <p class="room-meta">11 m² · 510 €/mois CC</p>
-              <p class="room-status room-status-full">Actuellement louée</p>
-              <p>Chambre chaleureuse, plafond mansardé, coin bureau cocoon.</p>
-              <a href="#candidater" class="room-cta room-cta-ghost">Rejoindre la liste d’attente</a>
-            </div>
-          </article>
-        </div>
       </div>
-    </section>
 
-    <!-- QUARTIER -->
-    <section id="quartier" class="section section-alt">
-      <div class="container">
-        
+      <figure class="residence-photo facade">
+        <img src="img/facade-maison.JPG" alt="Façade de la maison Aurea">
+        <figcaption>Maison de ville en cœur historique, rue calme pavée.</figcaption>
+      </figure>
+
+      <div class="rooms-grid">
+        <article class="room-card">
+          <h3>Chambre 1 – Vue cour</h3>
+          <p class="room-meta">10 m² · 490 €/mois CC</p>
+          <p class="room-status room-status-free">Disponible</p>
+          <p>Chambre calme donnant sur la cour pavée.</p>
+        </article>
+
+        <article class="room-card">
+          <h3>Chambre 2 – Vue jardin</h3>
+          <p class="room-meta">12 m² · 520 €/mois CC</p>
+          <p class="room-status room-status-soon">Bientôt disponible</p>
+          <p>Grande chambre lumineuse avec rangements intégrés.</p>
+        </article>
+
+        <article class="room-card">
+          <h3>Chambre 3 – Sous les toits</h3>
+          <p class="room-meta">11 m² · 505 €/mois CC</p>
+          <p class="room-status room-status-full">Actuellement occupée</p>
+          <p>Ambiance cocooning, vue sur les toits d’Angers.</p>
+        </article>
+
+        <article class="room-card">
+          <h3>Chambre 4 – Salle d’eau privée</h3>
+          <p class="room-meta">13 m² · 550 €/mois CC</p>
+          <p class="room-status room-status-full">Actuellement occupée</p>
+          <p>Chambre avec salle d’eau privative attenante.</p>
+        </article>
+      </div>
+
+      <p class="section-note">
+        Certaines chambres sont déjà louées. Vous pouvez
+        <a href="#contact">rejoindre la liste d’attente</a> pour être contacté dès
+        qu’une place se libère.
+      </p>
+    </div>
+  </section>
+
+  <!-- QUARTIER -->
+  <section id="quartier" class="section quartier-section">
+    <div class="container">
+      <div class="section-header">
         <h2>Un quartier d’exception au cœur d’Angers</h2>
         <p class="section-intro">
-          Nichée rue des Filles-Dieu, Aurea offre à ses résidents bien plus qu’une
-          colocation : un cadre de vie sécurisé, inspirant et profondément angevin.
-          Idéal pour étudier, vivre, s’épanouir.
+          Aurea se situe rue des Filles-Dieu, dans le quartier historique de la
+          Cité. Un emplacement rare : vivant, sécurisé et plein de charme, à deux
+          pas de tout.
         </p>
+      </div>
 
-        <div class="quartier-layout">
+      <div class="quartier-wrapper">
+        <!-- Bloc 1 -->
+        <div class="quartier-block">
+          <h3>🏰 Un quartier chargé d’histoire</h3>
 
-          <!-- Colonne texte -->
-          <div>
-
-            <h3>🌿 La Cité : le cœur historique d’Angers</h3>
-            <p>
-              Aurea se situe dans l’un des quartiers les plus prestigieux d’Angers&nbsp;:
-              <strong>La Cité</strong>. Un secteur connu pour son calme, son cachet
-              architectural et son ambiance chaleureuse.
-            </p>
-            <p>
-              Rues pavées, façades anciennes, atmosphère sereine… Les résidents vivent
-              dans un environnement à la fois <strong>charmant, sécurisé et inspirant</strong>,
-              juste derrière la cathédrale Saint-Maurice.
-            </p>
-
-            <h3 style="margin-top:1.8rem;">🏰 Un cadre historique préservé</h3>
-            <p>
-              La rue des Filles-Dieu tire son nom d’un ancien ordre religieux du Moyen Âge.
-              Aujourd’hui encore, l’âme du quartier se ressent dans chaque détail&nbsp;:
-            </p>
-            <ul class="details-list">
-              <li>Bâtiments médiévaux et maisons à pan de bois</li>
-              <li>Ruelles pavées paisibles</li>
-              <li>Quartier résidentiel très peu passager</li>
-              <li>Sécurité naturelle et ambiance familiale</li>
-            </ul>
-
-            <h3 style="margin-top:1.8rem;">🌆 Une localisation idéale</h3>
-            <p><strong>Tout est accessible à pied.</strong> Vraiment tout.</p>
-            <ul class="details-list">
-              <li>Cathédrale d’Angers : <strong>2 min</strong></li>
-              <li>Château d’Angers : <strong>5 min</strong></li>
-              <li>Place du Ralliement : <strong>7 min</strong></li>
-              <li>Bars, cafés, restaurants, librairies : dans le quartier</li>
-              <li>Boulangerie, marché, commerces : à quelques mètres</li>
-            </ul>
-
-            <p><strong>Mobilité ultra-simple :</strong></p>
-            <ul class="details-list">
-              <li>Stations vélo à 2 minutes</li>
-              <li>Arrêts bus et tram à proximité immédiate</li>
-              <li>Gare TGV Saint-Laud : <strong>15 minutes à pied</strong></li>
-            </ul>
-
-            <h3 style="margin-top:1.8rem;">🎓 Le quartier préféré des étudiants</h3>
-            <p>
-              La localisation d’Aurea permet de rejoindre facilement les principaux lieux
-              d’étude angevins :
-            </p>
-            <ul class="details-list">
-              <li>Université Catholique de l’Ouest</li>
-              <li>Campus Saint-Serge</li>
-              <li>Écoles et centres de formation du centre-ville</li>
-              <li>Espaces de coworking et bibliothèques</li>
-              <li>Lignes directes vers Belle-Beille</li>
-            </ul>
-            <p>
-              C’est un environnement parfait pour réussir ses études dans les meilleures
-              conditions.
-            </p>
-
-            <h3 style="margin-top:1.8rem;">🌞 Une qualité de vie incomparable</h3>
-            <p>
-              Aurea se trouve dans l’un des quartiers les plus agréables d’Angers, où
-              l’on profite de la douceur angevine au quotidien&nbsp;:
-            </p>
-            <ul class="details-list">
-              <li>Promenades le long de la Maine</li>
-              <li>Cafés ensoleillés et terrasses conviviales</li>
-              <li>Musées, jardins et vie culturelle</li>
-              <li>Un environnement propice au calme, au travail et à l’épanouissement</li>
-            </ul>
-
-            <h3 style="margin-top:1.8rem;">📌 En résumé</h3>
-            <p>
-              Le quartier de la rue des Filles-Dieu, c’est&nbsp;:
-            </p>
-            <ul class="details-list">
-              <li>✨ Un emplacement premium, rare et recherché</li>
-              <li>✨ Un environnement sécurisé et apaisant</li>
-              <li>✨ Une vie de quartier élégante et chaleureuse</li>
-              <li>✨ Une proximité immédiate avec tout ce dont un étudiant a besoin</li>
-              <li>✨ Une qualité de vie idéale pour étudier sereinement</li>
-            </ul>
-
-          </div>
-
-          <!-- Colonne photo + carte -->
-          <div class="quartier-media">
-            <figure class="quartier-photo">
-              <img src="img/quartier-rue.jpg" alt="Ruelle pavée du quartier de la Cité à Angers">
+          <div class="quartier-gallery">
+            <figure class="quartier-card">
+              <img src="img/quartier-cathedrale.jpg" alt="Cathédrale Saint-Maurice d’Angers">
             </figure>
-
-            <div class="quartier-map">
-              <iframe
-                src="https://www.google.com/maps?q=Rue%20des%20Filles-Dieu%20Angers&output=embed"
-                loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"
-                allowfullscreen>
-              </iframe>
-            </div>
+            <figure class="quartier-card">
+              <img src="img/quartier-rue.jpg" alt="Ruelle pavée près de la rue des Filles-Dieu">
+            </figure>
+            <figure class="quartier-card">
+              <img src="img/quartier-maison-adam.jpg" alt="Maison d’Adam à Angers">
+            </figure>
           </div>
 
+          <p class="quartier-text-small">
+            La Cité est l’un des secteurs les plus anciens d’Angers, avec ses
+            bâtiments médiévaux, ses maisons à pan de bois et ses hôtels
+            particuliers.
+          </p>
+          <p class="quartier-text-small">
+            La rue des Filles-Dieu tire son nom d’un ancien ordre religieux du
+            Moyen Âge. On y retrouve une vraie atmosphère de quartier :
+            <strong>authentique, calme et pleine de charme</strong>.
+          </p>
         </div>
-      </div>
-    </section>
 
-    <!-- PROCESS -->
-    <section id="process" class="section">
-      <div class="container">
-        <h2>Comment ça se passe ?</h2>
-        <ol class="process-list">
-          <li>Vous remplissez le formulaire de candidature en bas de page.</li>
-          <li>Nous revenons vers vous pour un premier échange rapide.</li>
-          <li>Visite sur place ou en visio si votre profil correspond.</li>
-          <li>Validation du dossier et signature du bail.</li>
-        </ol>
-      </div>
-    </section>
+        <hr class="quartier-separator">
 
-    <!-- FAQ -->
-    <section id="faq" class="section section-alt">
-      <div class="container">
-        <h2>FAQ</h2>
-        <div class="faq-list">
-          <details>
-            <summary>La colocation est-elle plutôt calme ?</summary>
-            <p>Oui. Aurea vise une ambiance sereine et respectueuse, avec des colocataires compatibles.</p>
-          </details>
-          <details>
-            <summary>Les charges sont-elles incluses ?</summary>
-            <p>Le loyer est charges comprises (CC) : eau, électricité, chauffage, internet.</p>
-          </details>
-          <details>
-            <summary>Puis-je visiter avant de candidater ?</summary>
-            <p>Nous privilégions d’abord une candidature rapide pour vérifier l’adéquation du profil, puis nous proposons une visite.</p>
-          </details>
-        </div>
-      </div>
-    </section>
+        <!-- Bloc 2 -->
+        <div class="quartier-block">
+          <h3>🏙️ À deux pas des essentiels</h3>
 
-    <!-- CONTACT & CANDIDATURE -->
-    <section id="candidater" class="section">
-      <div class="container">
-        <h2>Contact & Candidatures</h2>
-        <p class="section-intro">
-          Dites-nous qui vous êtes, et nous reviendrons vers vous rapidement.
-        </p>
-
-        <form class="form">
-          <div class="form-grid">
-            <label>
-              Nom
-              <input type="text" name="nom" required>
-            </label>
-            <label>
-              Prénom
-              <input type="text" name="prenom" required>
-            </label>
-            <label>
-              Email
-              <input type="email" name="email" required>
-            </label>
-            <label>
-              Téléphone
-              <input type="tel" name="telephone">
-            </label>
+          <div class="quartier-gallery">
+            <figure class="quartier-card">
+              <img src="img/quartier-ralliement.jpg" alt="Place du Ralliement à Angers">
+            </figure>
+            <figure class="quartier-card">
+              <img src="img/quartier-chateau.jpg" alt="Château d’Angers vu du ciel">
+            </figure>
+            <figure class="quartier-card">
+              <img src="img/quartier-maison-adam.jpg" alt="Centre historique d’Angers">
+            </figure>
           </div>
 
-          <label class="full-width">
-            Message
-            <textarea name="message" rows="4" placeholder="Parlez-nous un peu de vous, de vos études et de ce que vous cherchez."></textarea>
-          </label>
+          <p class="quartier-text-small">
+            En vivant dans ce quartier, vos colocataires profitent d’un
+            emplacement <strong>ultra-pratique</strong> :
+          </p>
+          <ul class="quartier-list">
+            <li>Cathédrale : 2 minutes à pied.</li>
+            <li>Château, place du Ralliement, commerces : 5 à 7 minutes.</li>
+            <li>Bars, cafés, terrasses, marché et supérette à proximité immédiate.</li>
+            <li>Tram, bus et vélos en libre-service à quelques pas.</li>
+          </ul>
+        </div>
 
-          <button type="submit" class="btn btn-primary">Envoyer</button>
-        </form>
+        <!-- Bloc 3 + carte -->
+        <div class="quartier-map-block">
+          <div>
+            <h3>🌿 Calme, sécurité & vie étudiante</h3>
+            <p class="quartier-text-small">
+              La rue des Filles-Dieu est très peu passante et naturellement
+              protégée du bruit. C’est un environnement idéal pour des étudiants
+              qui veulent être au centre de la ville tout en restant au calme
+              pour travailler.
+            </p>
+            <ul class="quartier-list">
+              <li>Quartier résidentiel, ambiance familiale et sécurisante.</li>
+              <li>Accès rapide aux universités, écoles et espaces de coworking.</li>
+              <li>Gare TGV à environ 15 minutes à pied.</li>
+              <li>Un cadre de vie qui rassure autant les étudiants que leurs parents.</li>
+            </ul>
+          </div>
+
+          <div class="quartier-map-card">
+            <iframe
+              src="https://www.google.com/maps?q=Rue%20des%20Filles-Dieu%20Angers&output=embed"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              allowfullscreen>
+            </iframe>
+          </div>
+        </div>
       </div>
-    </section>
-  </main>
-
-  <footer class="footer">
-    <div class="container footer-inner">
-      <p>© 2025 Aurea – Colocation étudiante à Saint-Maurice, Angers</p>
     </div>
-  </footer>
+  </section>
+
+  <!-- PROCESS -->
+  <section id="process" class="section section-alt">
+    <div class="container">
+      <div class="section-header">
+        <h2>Comment candidater ?</h2>
+        <p class="section-intro">
+          Un processus simple et transparent, pour les étudiants comme pour
+          les parents.
+        </p>
+      </div>
+
+      <ol class="process-list">
+        <li>
+          <h3>1. Prendre contact</h3>
+          <p>
+            Vous remplissez le formulaire de contact en bas de page avec quelques
+            informations sur votre profil et vos dates souhaitées.
+          </p>
+        </li>
+        <li>
+          <h3>2. Visiter la maison</h3>
+          <p>
+            Nous organisons une visite sur place ou en visio pour vous présenter
+            la maison, les chambres disponibles et les futurs colocataires.
+          </p>
+        </li>
+        <li>
+          <h3>3. Validation du dossier</h3>
+          <p>
+            Étudiant et garant fournissent les pièces nécessaires (carte d’identité,
+            justificatifs de revenus, etc.). Nous revenons vers vous rapidement.
+          </p>
+        </li>
+        <li>
+          <h3>4. Signature & installation</h3>
+          <p>
+            Une fois le dossier accepté, nous signons le bail, définissons la date
+            d’entrée et vous intégrez sereinement la colocation Aurea.
+          </p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Questions fréquentes</h2>
+      </div>
+
+      <div class="faq-list">
+        <article class="faq-item">
+          <h3>Les charges sont-elles incluses dans le loyer ?</h3>
+          <p>
+            Oui, le loyer est charges comprises : eau, électricité, chauffage,
+            internet et entretien des parties communes.
+          </p>
+        </article>
+
+        <article class="faq-item">
+          <h3>Quel type de bail est proposé ?</h3>
+          <p>
+            Il s’agit d’un bail individuel meublé pour chaque chambre, avec
+            accès aux espaces communs de la maison.
+          </p>
+        </article>
+
+        <article class="faq-item">
+          <h3>Les parents peuvent-ils visiter ?</h3>
+          <p>
+            Bien sûr. Nous accueillons volontiers les parents lors des visites
+            pour répondre à toutes leurs questions et les rassurer.
+          </p>
+        </article>
+
+        <article class="faq-item">
+          <h3>Y a-t-il des règles de vie dans la maison ?</h3>
+          <p>
+            Oui, un règlement intérieur simple encadre le respect, le calme et
+            la bonne entente entre colocataires.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="section section-alt">
+    <div class="container">
+      <div class="section-header">
+        <h2>Contact & candidatures</h2>
+        <p class="section-intro">
+          Dites-nous qui vous êtes, votre situation et vos dates souhaitées.
+          Nous reviendrons vers vous rapidement.
+        </p>
+      </div>
+
+      <form class="contact-form">
+        <div class="form-row">
+          <div class="form-field">
+            <label for="nom">Nom</label>
+            <input id="nom" name="nom" type="text" required>
+          </div>
+          <div class="form-field">
+            <label for="prenom">Prénom</label>
+            <input id="prenom" name="prenom" type="text" required>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-field">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" required>
+          </div>
+          <div class="form-field">
+            <label for="tel">Téléphone</label>
+            <input id="tel" name="tel" type="tel">
+          </div>
+        </div>
+
+        <div class="form-field">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" placeholder="Présentez votre profil, vos études, vos dates souhaitées…"></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Envoyer ma demande</button>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <p>© 2025 Aurea – Colocation étudiante à Saint-Maurice, Angers.</p>
+    <p class="footer-small">Infos non contractuelles – exemples indicatifs de loyers et disponibilités.</p>
+  </div>
+</footer>
 </body>
 </html>
