@@ -81,24 +81,29 @@
     .brand {
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 10px;
     }
     .brand-logo {
-      width: 28px;
-      height: 28px;
-      object-fit: cover;
-      border-radius: 6px;
+      height: 56px;         /* logo bien visible */
+      width: auto;
+      object-fit: contain;
+      display: block;
+      border-radius: 10px;
+    }
+    .brand-text-group {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
     }
     .brand-name {
       font-weight: 600;
-      letter-spacing: 0.08em;
+      letter-spacing: 0.10em;
       text-transform: uppercase;
       font-size: 0.8rem;
     }
     .brand-tagline {
       font-size: 0.8rem;
       color: var(--text-muted);
-      margin-left: 4px;
     }
     .nav-links {
       display: flex;
@@ -282,9 +287,9 @@
     /* QUARTIER */
     .quartier-layout {
       display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
+      grid-template-columns: minmax(0, 1.3fr) minmax(0, 1.1fr);
       gap: 28px;
-      align-items: center;
+      align-items: flex-start;
     }
     .quartier-photo {
       border-radius: var(--radius-lg);
@@ -295,6 +300,25 @@
       width: 100%;
       height: 220px;
       object-fit: cover;
+    }
+
+    .quartier-media {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .quartier-map {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid var(--border-soft);
+      background: #fff;
+    }
+    .quartier-map iframe {
+      width: 100%;
+      height: 260px;
+      border: 0;
+      display: block;
     }
 
     /* PROCESS */
@@ -393,8 +417,10 @@
     <div class="navbar-inner container">
       <div class="brand">
         <img src="img/logo-aurea.png" alt="Logo Aurea" class="brand-logo">
-        <span class="brand-name">Aurea</span>
-        <span class="brand-tagline">Saint-Maurice</span>
+        <div class="brand-text-group">
+          <span class="brand-name">Aurea</span>
+          <span class="brand-tagline">Colocation Saint-Maurice · Angers</span>
+        </div>
       </div>
       <nav class="nav-links">
         <a href="#accueil">Accueil</a>
@@ -416,7 +442,7 @@
           <h1>Colocation Aurea Saint-Maurice</h1>
           <p class="hero-subtitle">
             Maison de charme rénovée, chambres cosy et ambiance sereine.
-            Une colocation étudiante feutrée au cœur de Saint-Maurice.
+            Une colocation étudiante feutrée au cœur du centre historique d’Angers.
           </p>
           <div class="hero-actions">
             <a href="#chambres" class="btn btn-primary">Voir les chambres</a>
@@ -436,9 +462,9 @@
       <div class="container">
         <h2>Le concept Aurea</h2>
         <p class="section-intro">
-          Aurea s’inspire du coliving haut de gamme pour proposer une
-          colocation simple, élégante et chaleureuse, pensée pour les
-          étudiants et jeunes actifs qui recherchent un vrai lieu de vie.
+          Aurea s’inspire des codes du coliving haut de gamme pour proposer une
+          colocation simple, élégante et chaleureuse, pensée pour les étudiants
+          et jeunes actifs qui recherchent un vrai lieu de vie.
         </p>
 
         <div class="cards-3">
@@ -448,7 +474,7 @@
           </article>
           <article class="card">
             <h3>Ambiance sereine</h3>
-            <p>Colocation calme, profils compatibles, règles claires. L’esprit maison plus que résidence anonyme.</p>
+            <p>Colocation calme, profils compatibles, règles claires. L’esprit maison plutôt que résidence anonyme.</p>
           </article>
           <article class="card">
             <h3>Tout compris</h3>
@@ -486,7 +512,7 @@
           <div class="residence-details">
             <ul class="details-list">
               <li>10 chambres meublées</li>
-              <li>Grande pièce de vie + cuisine équipée</li>
+              <li>Grande pièce de vie + cuisine entièrement équipée</li>
               <li>2 salles de bain partagées + sanitaires</li>
               <li>Wifi haut débit, électroménager complet</li>
               <li>Maison de caractère, poutres apparentes, murs en pierre</li>
@@ -554,24 +580,119 @@
     <!-- QUARTIER -->
     <section id="quartier" class="section section-alt">
       <div class="container">
-        <h2>Quartier Saint-Maurice</h2>
+        
+        <h2>Un quartier d’exception au cœur d’Angers</h2>
         <p class="section-intro">
-          Un quartier vivant, charmant et authentique, avec commerces,
-          transports et ruelles pavées.
+          Nichée rue des Filles-Dieu, Aurea offre à ses résidents bien plus qu’une
+          colocation : un cadre de vie sécurisé, inspirant et profondément angevin.
+          Idéal pour étudier, vivre, s’épanouir.
         </p>
 
         <div class="quartier-layout">
+
+          <!-- Colonne texte -->
           <div>
-            <h3>Tout à proximité</h3>
+
+            <h3>🌿 La Cité : le cœur historique d’Angers</h3>
+            <p>
+              Aurea se situe dans l’un des quartiers les plus prestigieux d’Angers&nbsp;:
+              <strong>La Cité</strong>. Un secteur connu pour son calme, son cachet
+              architectural et son ambiance chaleureuse.
+            </p>
+            <p>
+              Rues pavées, façades anciennes, atmosphère sereine… Les résidents vivent
+              dans un environnement à la fois <strong>charmant, sécurisé et inspirant</strong>,
+              juste derrière la cathédrale Saint-Maurice.
+            </p>
+
+            <h3 style="margin-top:1.8rem;">🏰 Un cadre historique préservé</h3>
+            <p>
+              La rue des Filles-Dieu tire son nom d’un ancien ordre religieux du Moyen Âge.
+              Aujourd’hui encore, l’âme du quartier se ressent dans chaque détail&nbsp;:
+            </p>
             <ul class="details-list">
-              <li>Transports en commun</li>
-              <li>Commerces, cafés, restaurants</li>
-              <li>Parcs et bords de rivière</li>
+              <li>Bâtiments médiévaux et maisons à pan de bois</li>
+              <li>Ruelles pavées paisibles</li>
+              <li>Quartier résidentiel très peu passager</li>
+              <li>Sécurité naturelle et ambiance familiale</li>
             </ul>
+
+            <h3 style="margin-top:1.8rem;">🌆 Une localisation idéale</h3>
+            <p><strong>Tout est accessible à pied.</strong> Vraiment tout.</p>
+            <ul class="details-list">
+              <li>Cathédrale d’Angers : <strong>2 min</strong></li>
+              <li>Château d’Angers : <strong>5 min</strong></li>
+              <li>Place du Ralliement : <strong>7 min</strong></li>
+              <li>Bars, cafés, restaurants, librairies : dans le quartier</li>
+              <li>Boulangerie, marché, commerces : à quelques mètres</li>
+            </ul>
+
+            <p><strong>Mobilité ultra-simple :</strong></p>
+            <ul class="details-list">
+              <li>Stations vélo à 2 minutes</li>
+              <li>Arrêts bus et tram à proximité immédiate</li>
+              <li>Gare TGV Saint-Laud : <strong>15 minutes à pied</strong></li>
+            </ul>
+
+            <h3 style="margin-top:1.8rem;">🎓 Le quartier préféré des étudiants</h3>
+            <p>
+              La localisation d’Aurea permet de rejoindre facilement les principaux lieux
+              d’étude angevins :
+            </p>
+            <ul class="details-list">
+              <li>Université Catholique de l’Ouest</li>
+              <li>Campus Saint-Serge</li>
+              <li>Écoles et centres de formation du centre-ville</li>
+              <li>Espaces de coworking et bibliothèques</li>
+              <li>Lignes directes vers Belle-Beille</li>
+            </ul>
+            <p>
+              C’est un environnement parfait pour réussir ses études dans les meilleures
+              conditions.
+            </p>
+
+            <h3 style="margin-top:1.8rem;">🌞 Une qualité de vie incomparable</h3>
+            <p>
+              Aurea se trouve dans l’un des quartiers les plus agréables d’Angers, où
+              l’on profite de la douceur angevine au quotidien&nbsp;:
+            </p>
+            <ul class="details-list">
+              <li>Promenades le long de la Maine</li>
+              <li>Cafés ensoleillés et terrasses conviviales</li>
+              <li>Musées, jardins et vie culturelle</li>
+              <li>Un environnement propice au calme, au travail et à l’épanouissement</li>
+            </ul>
+
+            <h3 style="margin-top:1.8rem;">📌 En résumé</h3>
+            <p>
+              Le quartier de la rue des Filles-Dieu, c’est&nbsp;:
+            </p>
+            <ul class="details-list">
+              <li>✨ Un emplacement premium, rare et recherché</li>
+              <li>✨ Un environnement sécurisé et apaisant</li>
+              <li>✨ Une vie de quartier élégante et chaleureuse</li>
+              <li>✨ Une proximité immédiate avec tout ce dont un étudiant a besoin</li>
+              <li>✨ Une qualité de vie idéale pour étudier sereinement</li>
+            </ul>
+
           </div>
-          <figure class="quartier-photo">
-            <img src="img/quartier-rue.jpg" alt="Ruelle pavée du quartier Saint-Maurice">
-          </figure>
+
+          <!-- Colonne photo + carte -->
+          <div class="quartier-media">
+            <figure class="quartier-photo">
+              <img src="img/quartier-rue.jpg" alt="Ruelle pavée du quartier de la Cité à Angers">
+            </figure>
+
+            <div class="quartier-map">
+              <iframe
+                src="https://www.google.com/maps?q=Rue%20des%20Filles-Dieu%20Angers&output=embed"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                allowfullscreen>
+              </iframe>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
@@ -651,7 +772,7 @@
 
   <footer class="footer">
     <div class="container footer-inner">
-      <p>© 2025 Aurea – Colocation étudiante à Saint-Maurice</p>
+      <p>© 2025 Aurea – Colocation étudiante à Saint-Maurice, Angers</p>
     </div>
   </footer>
 </body>
